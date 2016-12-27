@@ -1,0 +1,21 @@
+{
+  "name": "electron-dms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -p tsconfig.json -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "mysql": "^2.12.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^2.0.34",
+    "@types/mysql": "^0.0.30"
+  }
+}

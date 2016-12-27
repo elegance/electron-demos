@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>easy-ui</title>
+    <link rel="stylesheet" href="lib/jquery-easyui-1.5/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" href="lib/jquery-easyui-1.5/themes/icon.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="mainLayout" class="easyui-layout">
+
+    <!-- 北部，头部页面 -->
+    <div data-options="region:'north'" style="height: 41px; overflow: hidden;" class="logo">
+        <span class="p-menuList">
+            <a href="javascript:void(0)" id="mb" class="easyui-menubutton" data-options="menu:'#mm'">新建</a>
+            <div id="mm" style="width:150px;">
+                <div>表</div>
+                <div>存储过程</div>
+                <div>函数</div>
+                <div>视图</div>
+            </div>
+        </span>
+    </div>
+
+<!-- 西部，菜单页 -->
+<div data-options="region: 'west', title: '菜单导航栏', iconCls: 'icon-standard-map', split: true, minWidth: 250, maxWidth: 500"
+    style="width: 250px; padding: 1px;">
+    <ul id="dataSourceTree" style="padding-top: 2px; padding-bottom: 2px;"></ul>
+</div>
+
+<!-- 中间，主页 -->
+<div data-options="region:'center'" style="overflow: hidden;">
+    <div id="mainTabs">
+        <div title="首页" data-options="iconCls:'ext-icon-heart'" style="margin: 2px; padding: 2px;" > 
+        </div>
+    </div>
+</div>
+
+<script>
+    window.$ = window.jQuery = require('./lib/jquery.3.1.1.min');
+    require('./lib/jquery-easyui-1.5/jquery.easyui.min')
+    require('./lib/jquery-easyui-1.5/locale/easyui-lang-zh_CN')
+    require('./js/index-easy-ui')
+</script>
+</body>
+
+</html>
