@@ -1,21 +1,28 @@
 import DatabaseMetaData from '../DatabaseMetaData';
 import * as mysql from 'mysql';
 
-class MySQLDatabaseMetaData implements DatabaseMetaData {
+class MySQLDatabaseMetaData {
     conn: mysql.IConnection;
 
     constructor(conn: mysql.IConnection) {
         this.conn = conn;
     }
 
-    async getTables(): Promise<Array<string>> {
-        return await new Promise<Array<string>>((resolve, reject) => {
-            this.conn.query(`SELECT table_name FROM information_schema.TABLES WHERE table_schema = 'test' AND table_type = 'BASE TABLE'`, (err, rows: Array<{}>, fields) => {
+    /**
+     * 列出Table
+     */
+    getTables(tableSchema: string): Promise<Array<string>> {
+        return new Promise<Array<string>>((resolve, reject) => {
+            let sql = `SELECT table_name FROM information_schema.TABLES WHERE table_schema = '${tableSchema}' AND table_type = 'BASE TABLE'`;
+            this.conn.query(sql, (err, rows: Array<{}>, fields) => {
                 resolve(rows.map(row => row['table_name']));
             });
         });
     }
 
+    /**
+     * 列出Table列信息
+     */
     getTableColumns(tableSchema: string, tableName: string): Promise<Array<any>> {
         return new Promise<Array<any>>((resolve, reject) => {
             let sql = `

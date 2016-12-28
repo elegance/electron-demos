@@ -2,3 +2,7 @@
     float: left;
     margin-left: 250px;
 }
+
+.ext-icon-database { background: url('../img/ext-icons/database.png') no-repeat; }
+.ext-icon-database_connect { background: url('../img/ext-icons/database_connect.png') no-repeat ; }
+.ext-icon-table { background: url('../img/ext-icons/table.png') no-repeat ; }
