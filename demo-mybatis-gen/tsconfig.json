@@ -4,9 +4,9 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "sourceMap": true,
-        "outDir": "./js"
+        "outDir": "./js/"
     },
     "include": [
-        "ts/"
+        "ts/*"
     ]
 }

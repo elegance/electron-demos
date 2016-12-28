@@ -2,16 +2,16 @@
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
         function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments)).next());
     });
 };
-const path = require("path");
-const MySQLDatabaseMetaData_1 = require("./jdbc/mysql/MySQLDatabaseMetaData");
-const IDBConnectInfo_1 = require("./bean/IDBConnectInfo");
-const MainTabs_1 = require("./MainTabs");
-let mainTabs = new MainTabs_1.MainTabs('#mainTabs');
+const path = require('path');
+const MySQLDatabaseMetaData_1 = require('./jdbc/mysql/MySQLDatabaseMetaData');
+const IDBConnectInfo_1 = require('./bean/IDBConnectInfo');
+const easyui_ext_1 = require('./easyui-ext');
+let mainTabs = new easyui_ext_1.MainTabs('#mainTabs');
 // ConnectUtil
 //     .addConnectInfo('ds-local', {
 //         host: '127.0.0.1',
@@ -74,6 +74,11 @@ let dataSourceTree = $('#dataSourceTree').tree({
     }
 });
 $('#btnAddDBConn').on('click', () => {
+    console.log('gogo');
+    easyui_ext_1.EasyUIExt.modalDialog({
+        title: '新增数据连接',
+        url: 'http://www.baidu.com'
+    });
 });
 /**
  * 加载Table

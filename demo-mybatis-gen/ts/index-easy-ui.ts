@@ -3,7 +3,7 @@ import * as path from 'path'
 
 import MySQLDatabaseMetaData from './jdbc/mysql/MySQLDatabaseMetaData';
 import { IDBConnectInfo, ConnectUtil } from './bean/IDBConnectInfo';
-import { MainTabs } from './MainTabs';
+import { MainTabs, EasyUIExt } from './easyui-ext';
 
 let mainTabs = new MainTabs('#mainTabs');
 
@@ -76,7 +76,11 @@ let dataSourceTree = $('#dataSourceTree').tree({
 });
 
 $('#btnAddDBConn').on('click', () => {
-    
+    console.log('gogo');
+    EasyUIExt.modalDialog({
+        title: '新增数据连接',
+        url: 'http://www.baidu.com'
+    });
 });
 
 /**

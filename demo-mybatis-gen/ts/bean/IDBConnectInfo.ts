@@ -6,7 +6,6 @@ export interface IDBConnectInfo {
     pwd: string;
     port: number;
     db: string;
-
 }
 
 export class ConnectUtil {
