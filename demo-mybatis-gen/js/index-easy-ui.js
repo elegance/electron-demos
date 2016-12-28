@@ -21,10 +21,10 @@ IDBConnectInfo_1.ConnectUtil
     db: 'test'
 })
     .addConnectInfo('ds-test-tzb', {
-    host: '120.55.88.227',
-    user: 'tzb_user',
-    pwd: 'tzb_pwd',
-    port: 33066,
+    host: '127.0.0.1',
+    user: 'root',
+    pwd: 'root',
+    port: 3306,
     db: 'tzbms'
 });
 // 遍历连接信息Map得到 tree 需要的数据结构
