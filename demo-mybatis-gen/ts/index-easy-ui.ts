@@ -7,21 +7,21 @@ import { MainTabs } from './MainTabs';
 
 let mainTabs = new MainTabs('#mainTabs');
 
-ConnectUtil
-    .addConnectInfo('ds-local', {
-        host: '127.0.0.1',
-        user: 'root',
-        pwd: 'root',
-        port: 3306,
-        db: 'test'
-    })
-    .addConnectInfo('ds-test-tzb', {
-        host: '127.0.0.1',
-        user: 'root',
-        pwd: 'root',
-        port: 3306,
-        db: 'tzbms'
-    });
+// ConnectUtil
+//     .addConnectInfo('ds-local', {
+//         host: '127.0.0.1',
+//         user: 'root',
+//         pwd: 'root',
+//         port: 3306,
+//         db: 'test'
+//     })
+//     .addConnectInfo('ds-test-tzb', {
+//         host: '127.0.0.1',
+//         user: 'root',
+//         pwd: 'root',
+//         port: 3306,
+//         db: 'tzbms'
+//     });
 
 // 遍历连接信息Map得到 tree 需要的数据结构
 let dbConnArr = [];
@@ -73,6 +73,10 @@ let dataSourceTree = $('#dataSourceTree').tree({
             top: e.pageY
         }).data('node', node);
     }
+});
+
+$('#btnAddDBConn').on('click', () => {
+    
 });
 
 /**
