@@ -4,7 +4,7 @@ export class EasyUIExt {
      * 创建一个模式化的dialog:可在iframe页方便的关闭dialog和刷新父页面元素
      * @requires jQuery,EasyUI
      */
-    static modalDialog({title=' ', width = '80%', height = '60%', modal = true, url = '', content = ''}) {
+    static modalDialog({title=' ', width = '80%', height = '60%', resizable = true, modal = true, url = '', content = ''}) {
         let cTime = new Date().getTime(), dialogId = 'dialog_' + cTime, frameId = 'dialog_frame_'
             + cTime, dialogDiv = '<div id="' + dialogId + '"></div>';
 
@@ -17,6 +17,7 @@ export class EasyUIExt {
             title: title,
             width: width,
             height: height,
+            resizable: resizable,
             modal: modal,
             content: content,
             onClose: function () {
